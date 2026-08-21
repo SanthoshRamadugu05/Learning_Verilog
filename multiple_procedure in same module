@@ -1,0 +1,16 @@
+module mul_pro;
+  reg x=1'b0;
+  reg y=1'b1;
+  reg z;
+  always @(z) begin
+    $display("X=%b,Y=%b ,Z=%b",x,y,z);
+  end
+  initial begin
+    #2;
+    z=x^y;
+    #5;
+    z=x|y;
+    #10;
+    z=~z;
+  end
+endmodule
