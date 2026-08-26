@@ -1,0 +1,13 @@
+module reduction_operators;
+  reg [5:0] x = 6'b111111;
+  reg [5:0] y = 6'b000000;
+  reg result;
+  initial begin
+    $monitor("x=%b; y=%b; result=%b", x, y, result);
+  end;
+  initial begin
+    #1 result = |x;
+    #1 result = |y;
+    #1 result = (&x | &y);
+  end;
+endmodule
