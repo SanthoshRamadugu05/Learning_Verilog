@@ -1,0 +1,14 @@
+module vector_exg;
+  reg [4:0] a = 0;
+  reg [4:0] b = 0;
+  wire [4:0] c;
+  assign c[1:0] = a[1:0];
+  initial begin
+    $monitor("A=%b; B=%b; C=%b", a, b, c);
+  end;
+  initial begin
+    #1 a = 1;
+    #1 a = 4'b0011;
+    #1 a = 0;
+  end;
+endmodule
