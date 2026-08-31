@@ -1,0 +1,14 @@
+module shift_ops;
+  reg[5:0]a=6'b111111;
+  reg[5:0]b=6'b000000;
+  initial begin
+    $monitor("a=%b;b=%b",a,b);
+  end;
+  initial begin
+    b=a<<1;
+  end;
+initial begin
+  a=0;
+  a=b>>1;
+end;
+endmodule
