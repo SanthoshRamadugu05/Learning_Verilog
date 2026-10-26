@@ -1,0 +1,16 @@
+module cont (
+    input a,
+    input b,
+    output c
+);
+
+    wire a_not;
+    wire a_or_b;
+    wire ab_and;
+
+    assign a_not = ~a;
+    assign a_or_b = a | b;
+    assign ab_and = a_or_b & a_not;
+    assign c = ab_and | a_or_b;
+
+endmodule
